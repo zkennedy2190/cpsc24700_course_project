@@ -14,18 +14,19 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Test endpoint
+// Health check endpoint
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'OK' });
+});
+
+// Root endpoint
 app.get('/', (req, res) => {
     res.send('Elderwood & Ember backend is running.');
 });
 
-// Test addl API endpoints
+// API endpoints
 app.get("/api/products", (req, res) => {
-    res.json([
-        { id: 1, name: "Phoenix Feather Wand", price: 99.99, description: "A powerful wand with a phoenix feather core." },
-        { id: 2, name: "Dragon Scale Cloak", price: 149.99, description: "A protective cloak woven with dragon scales." },
-        { id: 3, name: "Crystal Ball", price: 49.99, description: "A clear crystal ball for scrying and divination." }
-    ]);
+    res.json(products);
 });
 
 app.get('/api/categories', (req, res) => {
@@ -36,6 +37,7 @@ app.get('/api/orders', (req, res) => {
     res.json([{ id: 1, item: 'Phoenix Feather Wand', quantity: 1 }]);
 });
 
+// Start server
 app.listen(PORT, () => {
     console.log(`Elderwood & Ember backend is running on port ${PORT}`);
 });
