@@ -1,7 +1,7 @@
 # Elderwood & Ember - Full-Stack Wizarding Boutique
 A fictional **online wizarding boutique** built for CPSC 24700, demonstrating full-stack web development, CI/CD, and Azure deployment.
 
-## 🧙‍♂️ Project Overview
+## Project Overview
 
 Elderwood & Ember offers high-quality wizarding supplies and magical goods, showcasing:
 
