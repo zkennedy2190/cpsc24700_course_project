@@ -36,6 +36,6 @@ app.get('/api/orders', (req, res) => {
     res.json([{ id: 1, item: 'Phoenix Feather Wand', quantity: 1 }]);
 });
 
-app.listen(5000, () => {
-    console.log("Elderwood & Ember backend is running on port 5000");
+app.listen(PORT, () => {
+    console.log(`Elderwood & Ember backend is running on port ${PORT}`);
 });
